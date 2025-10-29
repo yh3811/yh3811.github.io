@@ -10,11 +10,12 @@ This site is built with [Jupyter Book](https://jupyterbook.org/) to share my pro
 
 ---
 
-## 📄 My Resume
 
-👉 [Download Resume (PDF)](resume.pdf)
+# 📄 My Resume
 
-<embed src="resume.pdf" width="100%" height="800px" type="application/pdf">
+👉 [Download Resume (PDF)](Resume_Huangyifeng%28Adam%29.pdf)
+
+<embed src="Resume_Huangyifeng%28Adam%29.pdf" width="100%" height="800px" type="application/pdf">
 
 ---
 
