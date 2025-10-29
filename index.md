@@ -13,10 +13,9 @@ This site is built with [Jupyter Book](https://jupyterbook.org/) to share my pro
 
 # 📄 My Resume
 
-👉 [Download Resume (PDF)](Resume_Huangyifeng%28Adam%29.pdf)
+👉 [Download Resume (PDF)](Adam.pdf)
 
-<embed src="Resume_Huangyifeng%28Adam%29.pdf" width="100%" height="800px" type="application/pdf">
-
+<embed src="Adam.pdf" width="100%" height="800px" type="application/pdf">
 ---
 
 ## 📚 Contents
