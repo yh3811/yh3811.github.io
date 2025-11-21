@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; yifeng&#39;s Portfolio! HOPE YOU LIKE IT!</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project2';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Project 1 — E-commerce Data Exploration" href="project1_ecommerce.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">yifeng's Portfolio! HOPE YOU LIKE IT!</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    🎓 Yifeng Huang’s Portfolio
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture_16_example.html">Lecture 16 Example</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="project1_ecommerce.html">Project 1 – Ecommerce Analysis</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/project2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In this project, I examine how crime density varies across New York City’s five boroughs by combining two NYC Open Data datasets:</span>
+<span class="c1">#	1.	NYPD Complaint Data (Current – Year to Date)</span>
+<span class="c1"># Contains every police complaint record filed in NYC in 2025.</span>
+<span class="c1">#	2.	NYC Population by Borough, 1950–2040</span>
+<span class="c1"># Provides borough-level population estimates for selected years.</span>
+
+<span class="c1"># The goal is to compute crime rate per 100,000 residents and visualize how population size relates to crime density.Hypothesis</span>
+
+<span class="c1"># Although boroughs with larger populations (Brooklyn, Queens) are expected to have higher total crime counts, </span>
+<span class="c1"># the Bronx may have the highest crime rate per capita.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;NYPD_Complaint_Data_Current_(Year_To_Date)_20251119.csv&quot;</span><span class="p">)</span>
+<span class="n">crime</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CMPLNT_NUM</th>
+      <th>ADDR_PCT_CD</th>
+      <th>BORO_NM</th>
+      <th>CMPLNT_FR_DT</th>
+      <th>CMPLNT_FR_TM</th>
+      <th>CMPLNT_TO_DT</th>
+      <th>CMPLNT_TO_TM</th>
+      <th>CRM_ATPT_CPTD_CD</th>
+      <th>HADEVELOPT</th>
+      <th>HOUSING_PSA</th>
+      <th>...</th>
+      <th>TRANSIT_DISTRICT</th>
+      <th>VIC_AGE_GROUP</th>
+      <th>VIC_RACE</th>
+      <th>VIC_SEX</th>
+      <th>X_COORD_CD</th>
+      <th>Y_COORD_CD</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Lat_Lon</th>
+      <th>New Georeferenced Column</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>299744592</td>
+      <td>121</td>
+      <td>STATEN ISLAND</td>
+      <td>01/20/2025</td>
+      <td>18:30:00</td>
+      <td>01/20/2025</td>
+      <td>18:35:00</td>
+      <td>COMPLETED</td>
+      <td>(null)</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>D</td>
+      <td>938881</td>
+      <td>167697</td>
+      <td>40.626859</td>
+      <td>-74.163440</td>
+      <td>(40.626859, -74.16344)</td>
+      <td>POINT (-74.16344 40.626859)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>306868358</td>
+      <td>9</td>
+      <td>MANHATTAN</td>
+      <td>05/22/2025</td>
+      <td>14:30:00</td>
+      <td>05/22/2025</td>
+      <td>14:45:00</td>
+      <td>COMPLETED</td>
+      <td>(null)</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>UNKNOWN</td>
+      <td>UNKNOWN</td>
+      <td>M</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>(0.0, 0.0)</td>
+      <td>POINT (0 0)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>303250435</td>
+      <td>13</td>
+      <td>MANHATTAN</td>
+      <td>03/20/2025</td>
+      <td>00:30:00</td>
+      <td>NaN</td>
+      <td>(null)</td>
+      <td>COMPLETED</td>
+      <td>(null)</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>25-44</td>
+      <td>WHITE</td>
+      <td>M</td>
+      <td>988886</td>
+      <td>207857</td>
+      <td>40.737203</td>
+      <td>-73.983273</td>
+      <td>(40.7372030985741, -73.9832725981497)</td>
+      <td>POINT (-73.9832725981497 40.7372030985741)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>307271594</td>
+      <td>47</td>
+      <td>BRONX</td>
+      <td>03/05/2025</td>
+      <td>17:00:00</td>
+      <td>NaN</td>
+      <td>(null)</td>
+      <td>COMPLETED</td>
+      <td>(null)</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>25-44</td>
+      <td>BLACK</td>
+      <td>F</td>
+      <td>1026480</td>
+      <td>262584</td>
+      <td>40.887314</td>
+      <td>-73.847272</td>
+      <td>(40.8873136344706, -73.8472717577564)</td>
+      <td>POINT (-73.8472717577564 40.8873136344706)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>309137838</td>
+      <td>14</td>
+      <td>MANHATTAN</td>
+      <td>07/05/2025</td>
+      <td>18:00:00</td>
+      <td>07/05/2025</td>
+      <td>18:31:00</td>
+      <td>COMPLETED</td>
+      <td>(null)</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>18-24</td>
+      <td>BLACK</td>
+      <td>F</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>(0.0, 0.0)</td>
+      <td>POINT (0 0)</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 36 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime_clean</span> <span class="o">=</span> <span class="n">crime</span><span class="p">[[</span><span class="s2">&quot;KY_CD&quot;</span><span class="p">,</span> <span class="s2">&quot;LAW_CAT_CD&quot;</span><span class="p">,</span> <span class="s2">&quot;BORO_NM&quot;</span><span class="p">,</span> <span class="s2">&quot;CMPLNT_FR_DT&quot;</span><span class="p">]]</span>
+<span class="n">crime_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>KY_CD</th>
+      <th>LAW_CAT_CD</th>
+      <th>BORO_NM</th>
+      <th>CMPLNT_FR_DT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>109</td>
+      <td>FELONY</td>
+      <td>STATEN ISLAND</td>
+      <td>01/20/2025</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>344</td>
+      <td>MISDEMEANOR</td>
+      <td>MANHATTAN</td>
+      <td>05/22/2025</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>104</td>
+      <td>FELONY</td>
+      <td>MANHATTAN</td>
+      <td>03/20/2025</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>104</td>
+      <td>FELONY</td>
+      <td>BRONX</td>
+      <td>03/05/2025</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>344</td>
+      <td>MISDEMEANOR</td>
+      <td>MANHATTAN</td>
+      <td>07/05/2025</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime_clean</span> <span class="o">=</span> <span class="n">crime_clean</span><span class="p">[</span><span class="n">crime_clean</span><span class="p">[</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime_by_borough</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">crime_clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;crime_count&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">crime_by_borough</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BORO_NM</th>
+      <th>crime_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(null)</td>
+      <td>969</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BRONX</td>
+      <td>99029</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BROOKLYN</td>
+      <td>122257</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>MANHATTAN</td>
+      <td>103595</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>QUEENS</td>
+      <td>94000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>STATEN ISLAND</td>
+      <td>18706</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;New_York_City_Population_by_Borough,_1950_-_2040_20251119.csv&quot;</span><span class="p">)</span>
+<span class="n">pop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age Group</th>
+      <th>Borough</th>
+      <th>1950</th>
+      <th>1950 - Boro share of NYC total</th>
+      <th>1960</th>
+      <th>1960 - Boro share of NYC total</th>
+      <th>1970</th>
+      <th>1970 - Boro share of NYC total</th>
+      <th>1980</th>
+      <th>1980 - Boro share of NYC total</th>
+      <th>...</th>
+      <th>2000</th>
+      <th>2000 - Boro share of NYC total</th>
+      <th>2010</th>
+      <th>2010 - Boro share of NYC total</th>
+      <th>2020</th>
+      <th>2020 - Boro share of NYC total</th>
+      <th>2030</th>
+      <th>2030 - Boro share of NYC total</th>
+      <th>2040</th>
+      <th>2040 - Boro share of NYC total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Total Population</td>
+      <td>NYC Total</td>
+      <td>7,891,957</td>
+      <td>100%</td>
+      <td>7,781,984</td>
+      <td>100%</td>
+      <td>7,894,862</td>
+      <td>100%</td>
+      <td>7,071,639</td>
+      <td>100%</td>
+      <td>...</td>
+      <td>8,008,278</td>
+      <td>100%</td>
+      <td>8,242,624</td>
+      <td>100%</td>
+      <td>8,550,971</td>
+      <td>100%</td>
+      <td>8,821,027</td>
+      <td>100%</td>
+      <td>9,025,145</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Total Population</td>
+      <td>Bronx</td>
+      <td>1,451,277</td>
+      <td>18.39%</td>
+      <td>1,424,815</td>
+      <td>18.31%</td>
+      <td>1,471,701</td>
+      <td>18.64%</td>
+      <td>1,168,972</td>
+      <td>16.53%</td>
+      <td>...</td>
+      <td>1,332,650</td>
+      <td>16.64%</td>
+      <td>1,385,108</td>
+      <td>16.8%</td>
+      <td>1,446,788</td>
+      <td>16.92%</td>
+      <td>1,518,998</td>
+      <td>17.22%</td>
+      <td>1,579,245</td>
+      <td>17.5%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Total Population</td>
+      <td>Brooklyn</td>
+      <td>2,738,175</td>
+      <td>34.7%</td>
+      <td>2,627,319</td>
+      <td>33.76%</td>
+      <td>2,602,012</td>
+      <td>32.96%</td>
+      <td>2,230,936</td>
+      <td>31.55%</td>
+      <td>...</td>
+      <td>2,465,326</td>
+      <td>30.78%</td>
+      <td>2,552,911</td>
+      <td>30.97%</td>
+      <td>2,648,452</td>
+      <td>30.97%</td>
+      <td>2,754,009</td>
+      <td>31.22%</td>
+      <td>2,840,525</td>
+      <td>31.47%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Total Population</td>
+      <td>Manhattan</td>
+      <td>1,960,101</td>
+      <td>24.84%</td>
+      <td>1,698,281</td>
+      <td>21.82%</td>
+      <td>1,539,233</td>
+      <td>19.5%</td>
+      <td>1,428,285</td>
+      <td>20.2%</td>
+      <td>...</td>
+      <td>1,537,195</td>
+      <td>19.2%</td>
+      <td>1,585,873</td>
+      <td>19.24%</td>
+      <td>1,638,281</td>
+      <td>19.16%</td>
+      <td>1,676,720</td>
+      <td>19.01%</td>
+      <td>1,691,617</td>
+      <td>18.74%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Total Population</td>
+      <td>Queens</td>
+      <td>1,550,849</td>
+      <td>19.65%</td>
+      <td>1,809,578</td>
+      <td>23.25%</td>
+      <td>1,986,473</td>
+      <td>25.16%</td>
+      <td>1,891,325</td>
+      <td>26.75%</td>
+      <td>...</td>
+      <td>2,229,379</td>
+      <td>27.84%</td>
+      <td>2,250,002</td>
+      <td>27.3%</td>
+      <td>2,330,295</td>
+      <td>27.25%</td>
+      <td>2,373,551</td>
+      <td>26.91%</td>
+      <td>2,412,649</td>
+      <td>26.73%</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_clean</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[[</span><span class="s2">&quot;Borough&quot;</span><span class="p">,</span> <span class="s2">&quot;2020&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;2020&quot;</span><span class="p">:</span> <span class="s2">&quot;Population&quot;</span><span class="p">})</span>
+<span class="n">pop_clean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Borough</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NYC Total</td>
+      <td>8,550,971</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bronx</td>
+      <td>1,446,788</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brooklyn</td>
+      <td>2,648,452</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Manhattan</td>
+      <td>1,638,281</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Queens</td>
+      <td>2,330,295</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Staten Island</td>
+      <td>487,155</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clean borough names in both datasets</span>
+<span class="n">crime_by_borough</span><span class="p">[</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crime_by_borough</span><span class="p">[</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">pop_clean</span><span class="p">[</span><span class="s2">&quot;Borough&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pop_clean</span><span class="p">[</span><span class="s2">&quot;Borough&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1"># Merge again</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">crime_by_borough</span><span class="p">,</span>
+    <span class="n">pop_clean</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">,</span>
+    <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Borough&quot;</span><span class="p">,</span>
+    <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span>
+<span class="p">)</span>
+
+<span class="n">merged</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BORO_NM</th>
+      <th>crime_count</th>
+      <th>Borough</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bronx</td>
+      <td>99029</td>
+      <td>Bronx</td>
+      <td>1,446,788</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brooklyn</td>
+      <td>122257</td>
+      <td>Brooklyn</td>
+      <td>2,648,452</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Manhattan</td>
+      <td>103595</td>
+      <td>Manhattan</td>
+      <td>1,638,281</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Queens</td>
+      <td>94000</td>
+      <td>Queens</td>
+      <td>2,330,295</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Staten Island</td>
+      <td>18706</td>
+      <td>Staten Island</td>
+      <td>487,155</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">merged</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BORO_NM</th>
+      <th>crime_count</th>
+      <th>Borough</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bronx</td>
+      <td>99029</td>
+      <td>Bronx</td>
+      <td>1446788</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brooklyn</td>
+      <td>122257</td>
+      <td>Brooklyn</td>
+      <td>2648452</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Manhattan</td>
+      <td>103595</td>
+      <td>Manhattan</td>
+      <td>1638281</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Queens</td>
+      <td>94000</td>
+      <td>Queens</td>
+      <td>2330295</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Staten Island</td>
+      <td>18706</td>
+      <td>Staten Island</td>
+      <td>487155</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="s2">&quot;crime_rate_per_100k&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">&quot;crime_count&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100000</span>
+<span class="n">merged</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BORO_NM</th>
+      <th>crime_count</th>
+      <th>Borough</th>
+      <th>Population</th>
+      <th>crime_rate_per_100k</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bronx</td>
+      <td>99029</td>
+      <td>Bronx</td>
+      <td>1446788</td>
+      <td>6844.748505</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brooklyn</td>
+      <td>122257</td>
+      <td>Brooklyn</td>
+      <td>2648452</td>
+      <td>4616.168237</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Manhattan</td>
+      <td>103595</td>
+      <td>Manhattan</td>
+      <td>1638281</td>
+      <td>6323.396292</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Queens</td>
+      <td>94000</td>
+      <td>Queens</td>
+      <td>2330295</td>
+      <td>4033.824044</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Staten Island</td>
+      <td>18706</td>
+      <td>Staten Island</td>
+      <td>487155</td>
+      <td>3839.845634</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">merged</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;crime_rate_per_100k&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Population&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;NYC Crime Rate per 100,000 Residents by Borough (2025)&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;BORO_NM&quot;</span><span class="p">:</span> <span class="s2">&quot;Borough&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;crime_rate_per_100k&quot;</span><span class="p">:</span> <span class="s2">&quot;Crime Rate per 100,000 Residents&quot;</span>
+    <span class="p">},</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">merged</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;crime_count&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Total Crime Incidents by Borough (2025)&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">:</span> <span class="s2">&quot;Borough&quot;</span><span class="p">,</span> <span class="s2">&quot;crime_count&quot;</span><span class="p">:</span> <span class="s2">&quot;Total Crime Incidents&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ranked</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;crime_rate_per_100k&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">ranked</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;crime_rate_per_100k&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Ranked Crime Rate per 100k (Highest → Lowest)&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">:</span> <span class="s2">&quot;Borough&quot;</span><span class="p">,</span> <span class="s2">&quot;crime_rate_per_100k&quot;</span><span class="p">:</span> <span class="s2">&quot;Crime Rate per 100k&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Crime count (left y-axis)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">&quot;crime_count&quot;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Crime Count&quot;</span><span class="p">,</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="s2">&quot;y1&quot;</span>
+<span class="p">))</span>
+
+<span class="c1"># Population (right y-axis)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1_000_000</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Population (Millions)&quot;</span><span class="p">,</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="s2">&quot;y2&quot;</span>
+<span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Crime Count vs Population (Two Datasets in One Visualization)&quot;</span><span class="p">,</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Borough&quot;</span><span class="p">),</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Crime Count&quot;</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">&quot;crime_count&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">]),</span>
+    <span class="n">yaxis2</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Population (Millions)&quot;</span><span class="p">,</span>
+        <span class="n">overlaying</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+        <span class="n">side</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1_000_000</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">]</span>
+    <span class="p">),</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+
+<span class="n">crime_points</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[[</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">,</span> <span class="s2">&quot;crime_count&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;crime_count&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">})</span>
+<span class="n">crime_points</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Crime Count&quot;</span>
+
+<span class="n">pop_points</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[[</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Population&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">})</span>
+<span class="n">pop_points</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Population&quot;</span>
+
+<span class="n">combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">crime_points</span><span class="p">,</span> <span class="n">pop_points</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">combined</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;type&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Crime Count and Population as Separate Points (Two Datasets in One Chart)&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;BORO_NM&quot;</span><span class="p">:</span> <span class="s2">&quot;Borough&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Value&quot;</span><span class="p">},</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#takeaways</span>
+<span class="c1">#After putting the two datasets together, a few things become much clearer:</span>
+<span class="c1"># 1. Population shapes the overall crime picture, but it doesn’t tell the whole story.</span>
+<span class="c1"># Boroughs with more people — especially Brooklyn and Queens — naturally show higher numbers of crime incidents. When you look at the bars side by side, it’s almost a one-to-one pattern. This suggests that a good portion of NYC’s crime variation is simply driven by how many people live (and interact) in each borough.</span>
+<span class="c1"># 2. Manhattan doesn’t behave like a typical residential borough.</span>
+<span class="c1"># Even though Manhattan’s population is nowhere near Brooklyn’s or Queens’, its crime count is surprisingly high. This is a good reminder that Manhattan’s “population” in daily life is way bigger than its resident population — commuters, tourists, and businesses change the dynamic. It’s almost like Manhattan is playing by its own rules.</span>
+
+<span class="c1">#3. The Bronx stands out once you adjust for population size.</span>
+<span class="c1"># When shifting from total crime to crime per 100,000 residents, the Bronx moves to the top. What looks “normal” in absolute numbers suddenly becomes disproportionate once we consider population. This suggests that the Bronx faces structural challenges that can’t be explained by population size alone.</span>
+
+<span class="c1"># 4. Staten Island is consistently an outlier on both metrics.</span>
+<span class="c1"># Small population, low crime, and the lowest crime rate. Nothing surprising here, but it reinforces that Staten Island behaves differently from the rest of NYC — more suburban, less dense, and far fewer opportunities for crime to occur.</span>
+<span class="c1">#Overall:</span>
+<span class="c1"># Looking at both datasets in the same visualization helps reveal something simple but important:</span>
+<span class="c1"># crime totals tend to follow population, but crime risk (per capita) does not.The Bronx and Manhattan illustrate this gap especially well, and that’s where most of the policy questions — or real safety concerns — start to emerge.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project1_ecommerce.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Project 1 — E-commerce Data Exploration</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By yifeng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
