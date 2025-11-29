@@ -7562,9 +7562,10 @@ Lower-income boroughs experience higher PM2.5 levels than wealthier boroughs.</p
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
 
-<span class="c1"># Use HTML-friendly renderer</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"plotly_mimetype"</span>
+<span class="c1"># Use pure HTML-based rendering (compatible with GitHub Pages)</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"iframe"</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
@@ -8215,18 +8216,27 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Scatter: Poverty Rate vs PM2.5</span>
+<span class="n">fig_scatter</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">merged</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">"PovertyRate"</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">"PM25"</span><span class="p">,</span>
     <span class="n">text</span><span class="o">=</span><span class="s2">"Borough"</span><span class="p">,</span>
     <span class="n">trendline</span><span class="o">=</span><span class="s2">"ols"</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">"Poverty Rate vs PM2.5 Exposure by Borough"</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"PovertyRate"</span><span class="p">:</span> <span class="s2">"Poverty Rate"</span><span class="p">,</span> <span class="s2">"PM25"</span><span class="p">:</span> <span class="s2">"PM2.5 (mcg/m3)"</span><span class="p">}</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"PovertyRate"</span><span class="p">:</span> <span class="s2">"Poverty Rate"</span><span class="p">,</span>
+        <span class="s2">"PM25"</span><span class="p">:</span> <span class="s2">"PM2.5 (mcg/m3)"</span>
+    <span class="p">}</span>
 <span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"top center"</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig_scatter</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"top center"</span><span class="p">)</span>
+
+<span class="c1"># Save as standalone HTML</span>
+<span class="n">fig_scatter</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">"plot_scatter_pm25_poverty.html"</span><span class="p">,</span> <span class="n">include_plotlyjs</span><span class="o">=</span><span class="s2">"cdn"</span><span class="p">)</span>
+
+<span class="c1"># Display in notebook</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">"plot_scatter_pm25_poverty.html"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8236,8 +8246,11 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="600" src="plot_scatter_pm25_poverty.html" width="900"></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -8260,17 +8273,19 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Bar chart: Average PM2.5 by Borough</span>
+<span class="n">fig_bar_pm25</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
     <span class="n">merged</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">"Borough"</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">"PM25"</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">"PovertyRate"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Average PM2.5 Concentration by Borough"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average PM2.5 Levels by Borough"</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"PM25"</span><span class="p">:</span> <span class="s2">"PM2.5 (mcg/m3)"</span><span class="p">},</span>
-    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">"Reds"</span>
+    <span class="n">text_auto</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 
-<span class="n">fig2</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig_bar_pm25</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">"plot_bar_pm25.html"</span><span class="p">,</span> <span class="n">include_plotlyjs</span><span class="o">=</span><span class="s2">"cdn"</span><span class="p">)</span>
+
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">"plot_bar_pm25.html"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8280,8 +8295,11 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="600" src="plot_bar_pm25.html" width="900"></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -8305,16 +8323,19 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Bar chart: Poverty rate by Borough</span>
+<span class="n">fig_bar_poverty</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
     <span class="n">merged</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">"Borough"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"PM25"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Average PM2.5 Level by Borough"</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"PM25"</span><span class="p">:</span> <span class="s2">"PM2.5 (mcg/m3)"</span><span class="p">,</span> <span class="s2">"Borough"</span><span class="p">:</span> <span class="s2">"Borough"</span><span class="p">},</span>
-    <span class="n">text</span><span class="o">=</span><span class="s2">"PM25"</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"PovertyRate"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Poverty Rate by Borough"</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"PovertyRate"</span><span class="p">:</span> <span class="s2">"Poverty Rate (%)"</span><span class="p">},</span>
+    <span class="n">text_auto</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"outside"</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">fig_bar_poverty</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">"plot_bar_poverty.html"</span><span class="p">,</span> <span class="n">include_plotlyjs</span><span class="o">=</span><span class="s2">"cdn"</span><span class="p">)</span>
+
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">"plot_bar_poverty.html"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8324,8 +8345,11 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="600" src="plot_bar_poverty.html" width="900"></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -8350,27 +8374,48 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
+
+<span class="c1"># Use HTML-compatible renderer</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"iframe"</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
 
+<span class="c1"># Bar for PM2.5</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">"Borough"</span><span class="p">],</span>
     <span class="n">y</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">"PM25"</span><span class="p">],</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">"PM2.5"</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"PM2.5 (mcg/m3)"</span><span class="p">,</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="s2">"steelblue"</span>
 <span class="p">))</span>
 
+<span class="c1"># Line for Poverty rate</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">"Borough"</span><span class="p">],</span>
     <span class="n">y</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">"PovertyRate"</span><span class="p">],</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">"Poverty Rate"</span><span class="p">,</span>
-    <span class="n">yaxis</span><span class="o">=</span><span class="s2">"y2"</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="s2">"y2"</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"lines+markers"</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"firebrick"</span><span class="p">)</span>
 <span class="p">))</span>
 
+<span class="c1"># Layout</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">"PM2.5 and Poverty Rate by Borough"</span><span class="p">,</span>
-    <span class="n">yaxis2</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">overlaying</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">"right"</span><span class="p">),</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Borough"</span><span class="p">),</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"PM2.5 (mcg/m3)"</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">"left"</span><span class="p">),</span>
+    <span class="n">yaxis2</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Poverty Rate (%)"</span><span class="p">,</span>
+                <span class="n">overlaying</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span>
+                <span class="n">side</span><span class="o">=</span><span class="s2">"right"</span><span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">"h"</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Save as HTML for GitHub Pages</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">"plot_dual_axis_pm25_poverty.html"</span><span class="p">,</span> <span class="n">include_plotlyjs</span><span class="o">=</span><span class="s2">"cdn"</span><span class="p">)</span>
+
+<span class="c1"># Display inside notebook</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">"plot_dual_axis_pm25_poverty.html"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8380,8 +8425,11 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="600" src="plot_dual_axis_pm25_poverty.html" width="900"></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -8465,6 +8513,9 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="545px" scrolling="no" src="iframe_figures/figure_11.html" width="100%"></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -8487,13 +8538,19 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"PovertyRate"</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"PM25"</span><span class="p">]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
 <span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8504,16 +8561,6 @@ Finally, I examined whether the data supports the initial hypothesis that higher
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/miniconda3/lib/python3.13/site-packages/statsmodels/stats/stattools.py:74: ValueWarning:
-
-omni_normtest is not valid with less than 8 observations; 5 samples were given.
-
-</pre>
-</div>
-</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
@@ -8532,7 +8579,7 @@ omni_normtest is not valid with less than 8 observations; 5 samples were given.
 <th>Date:</th> <td>Sat, 29 Nov 2025</td> <th>  Prob (F-statistic):</th> <td> 0.968</td>
 </tr>
 <tr>
-<th>Time:</th> <td>16:45:43</td> <th>  Log-Likelihood:    </th> <td> -5.5412</td>
+<th>Time:</th> <td>16:59:43</td> <th>  Log-Likelihood:    </th> <td> -5.5412</td>
 </tr>
 <tr>
 <th>No. Observations:</th> <td>     5</td> <th>  AIC:               </th> <td>   15.08</td>
