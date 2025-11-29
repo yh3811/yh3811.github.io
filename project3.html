@@ -7515,7 +7515,8 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Project-3-Prompt">Project 3 Prompt<a class="anchor-link" href="#Project-3-Prompt">¶</a></h1><p><strong>Dataset(s) to be used:</strong></p>
 <ul>
 <li>NYC Air Quality Surveillance Data (Air_Quality_20251129.csv)</li>
@@ -7549,12 +7550,43 @@ Lower-income boroughs experience higher PM2.5 levels than wealthier boroughs.</p
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=deee067f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=deee067f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
+
+<span class="c1"># Use HTML-friendly renderer</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">"iframe_connected"</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+
+<span class="c1"># Load datasets with correct filenames</span>
+<span class="n">air</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"Air_Quality_20251129.csv"</span><span class="p">)</span>
+<span class="n">poverty</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"NYCgov_Poverty_Measure_Data_(2018)_20251129.csv"</span><span class="p">)</span>
+
+<span class="c1"># Check columns to ensure names match</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Air Quality Columns:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">air</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Poverty Data Columns:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">poverty</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Air Quality Columns:
  Index(['Unique ID', 'Indicator ID', 'Name', 'Measure', 'Measure Info',
@@ -7578,13 +7610,6 @@ Poverty Data Columns:
 </pre>
 </div>
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/var/folders/8f/x7r73wwd71sb626x30bqrjl00000gn/T/ipykernel_33659/761969877.py:7: DtypeWarning: Columns (2,3,31) have mixed types. Specify dtype option on import or set low_memory=False.
-  poverty = pd.read_csv("NYCgov_Poverty_Measure_Data_(2018)_20251129.csv")
-</pre>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -7592,7 +7617,8 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="About-the-Data">About the Data<a class="anchor-link" href="#About-the-Data">¶</a></h2><p>This project uses two datasets from NYC Open Data:</p>
 <h3 id="1.-NYC-Air-Quality-Surveillance-Data">1. NYC Air Quality Surveillance Data<a class="anchor-link" href="#1.-NYC-Air-Quality-Surveillance-Data">¶</a></h3><p>This dataset provides pollutant measurements (PM2.5, ozone, nitrogen dioxide) across NYC boroughs, community districts, and UHF neighborhoods. Each observation includes:</p>
 <ul>
@@ -7619,17 +7645,41 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Clean Air Quality Data</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=474c8a75">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=474c8a75">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Keep only Borough-level rows</span>
+<span class="n">air_boro</span> <span class="o">=</span> <span class="n">air</span><span class="p">[</span><span class="n">air</span><span class="p">[</span><span class="s2">"Geo Type Name"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"Borough"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Filter for PM2.5 rows (Fine Particulate Matter)</span>
+<span class="n">pm25</span> <span class="o">=</span> <span class="n">air_boro</span><span class="p">[</span><span class="n">air_boro</span><span class="p">[</span><span class="s2">"Name"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">"Fine partic"</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+
+<span class="c1"># Rename Data Value to PM25</span>
+<span class="n">pm25</span> <span class="o">=</span> <span class="n">pm25</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"Data Value"</span><span class="p">:</span> <span class="s2">"PM25"</span><span class="p">})</span>
+
+<span class="n">pm25</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7751,17 +7801,52 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Compute Borough-level PM2.5</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=d8b83377">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d8b83377">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Borough code → name dictionary</span>
+<span class="n">boro_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"1"</span><span class="p">:</span> <span class="s2">"Manhattan"</span><span class="p">,</span>
+    <span class="s2">"2"</span><span class="p">:</span> <span class="s2">"Bronx"</span><span class="p">,</span>
+    <span class="s2">"3"</span><span class="p">:</span> <span class="s2">"Brooklyn"</span><span class="p">,</span>
+    <span class="s2">"4"</span><span class="p">:</span> <span class="s2">"Queens"</span><span class="p">,</span>
+    <span class="s2">"5"</span><span class="p">:</span> <span class="s2">"Staten Island"</span>
+<span class="p">}</span>
+
+<span class="c1"># Group PM2.5 by borough code</span>
+<span class="n">pm25_boro</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pm25</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Geo Join ID"</span><span class="p">)[</span><span class="s2">"PM25"</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"Geo Join ID"</span><span class="p">:</span> <span class="s2">"Boro"</span><span class="p">})</span>
+<span class="p">)</span>
+
+<span class="c1"># Map Boro code to actual borough name</span>
+<span class="n">pm25_boro</span><span class="p">[</span><span class="s2">"Boro_Name"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pm25_boro</span><span class="p">[</span><span class="s2">"Boro"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">boro_map</span><span class="p">)</span>
+
+<span class="n">pm25_boro</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7783,6 +7868,7 @@ Poverty Data Columns:
 <th></th>
 <th>Boro</th>
 <th>PM25</th>
+<th>Boro_Name</th>
 </tr>
 </thead>
 <tbody>
@@ -7790,26 +7876,31 @@ Poverty Data Columns:
 <th>0</th>
 <td>1</td>
 <td>9.067841</td>
+<td>Manhattan</td>
 </tr>
 <tr>
 <th>1</th>
 <td>2</td>
 <td>8.756341</td>
+<td>Bronx</td>
 </tr>
 <tr>
 <th>2</th>
 <td>3</td>
 <td>10.201740</td>
+<td>Brooklyn</td>
 </tr>
 <tr>
 <th>3</th>
 <td>4</td>
 <td>8.427122</td>
+<td>Queens</td>
 </tr>
 <tr>
 <th>4</th>
 <td>5</td>
 <td>8.051056</td>
+<td>Staten Island</td>
 </tr>
 </tbody>
 </table>
@@ -7823,17 +7914,52 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Code Cell – Compute Borough-level PM2.5</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=847e7a7b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=847e7a7b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Borough code → borough name</span>
+<span class="n">boro_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"1"</span><span class="p">:</span> <span class="s2">"Manhattan"</span><span class="p">,</span>
+    <span class="s2">"2"</span><span class="p">:</span> <span class="s2">"Bronx"</span><span class="p">,</span>
+    <span class="s2">"3"</span><span class="p">:</span> <span class="s2">"Brooklyn"</span><span class="p">,</span>
+    <span class="s2">"4"</span><span class="p">:</span> <span class="s2">"Queens"</span><span class="p">,</span>
+    <span class="s2">"5"</span><span class="p">:</span> <span class="s2">"Staten Island"</span>
+<span class="p">}</span>
+
+<span class="c1"># Compute borough-level poverty rate</span>
+<span class="n">poverty_rate</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">poverty</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Boro"</span><span class="p">)[</span><span class="s2">"NYCgov_Pov_Stat"</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"NYCgov_Pov_Stat"</span><span class="p">:</span> <span class="s2">"PovertyRate"</span><span class="p">})</span>
+<span class="p">)</span>
+
+<span class="c1"># Map Boro code to actual borough names</span>
+<span class="n">poverty_rate</span><span class="p">[</span><span class="s2">"Boro_Name"</span><span class="p">]</span> <span class="o">=</span> <span class="n">poverty_rate</span><span class="p">[</span><span class="s2">"Boro"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">boro_map</span><span class="p">)</span>
+
+<span class="n">poverty_rate</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7855,6 +7981,7 @@ Poverty Data Columns:
 <th></th>
 <th>Boro</th>
 <th>PovertyRate</th>
+<th>Boro_Name</th>
 </tr>
 </thead>
 <tbody>
@@ -7862,26 +7989,31 @@ Poverty Data Columns:
 <th>0</th>
 <td>1</td>
 <td>1.742097</td>
+<td>Manhattan</td>
 </tr>
 <tr>
 <th>1</th>
 <td>2</td>
 <td>1.817400</td>
+<td>Bronx</td>
 </tr>
 <tr>
 <th>2</th>
 <td>3</td>
 <td>1.861666</td>
+<td>Brooklyn</td>
 </tr>
 <tr>
 <th>3</th>
 <td>4</td>
 <td>1.841589</td>
+<td>Queens</td>
 </tr>
 <tr>
 <th>4</th>
 <td>5</td>
 <td>1.861692</td>
+<td>Staten Island</td>
 </tr>
 </tbody>
 </table>
@@ -7895,17 +8027,64 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Merge Datasets</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=66b95a9e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=66b95a9e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Borough lookup</span>
+<span class="n">boro_names</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">"Manhattan"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">"Bronx"</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s2">"Brooklyn"</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s2">"Queens"</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s2">"Staten Island"</span><span class="p">}</span>
+
+<span class="c1"># Add borough names before merge</span>
+<span class="n">pm25_boro</span><span class="p">[</span><span class="s2">"Borough"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pm25_boro</span><span class="p">[</span><span class="s2">"Boro"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">boro_names</span><span class="p">)</span>
+<span class="n">poverty_rate</span><span class="p">[</span><span class="s2">"Borough"</span><span class="p">]</span> <span class="o">=</span> <span class="n">poverty_rate</span><span class="p">[</span><span class="s2">"Boro"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">boro_names</span><span class="p">)</span>
+
+<span class="c1"># Merge datasets</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">pm25_boro</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">poverty_rate</span><span class="p">[[</span><span class="s2">"Boro"</span><span class="p">,</span> <span class="s2">"PovertyRate"</span><span class="p">,</span> <span class="s2">"Borough"</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s2">"Boro"</span><span class="p">,</span>
+    <span class="n">how</span><span class="o">=</span><span class="s2">"left"</span>
+<span class="p">)</span>
+
+<span class="n">merged</span>
+
+<span class="c1"># Remove duplicate borough name columns</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[[</span><span class="s2">"Boro"</span><span class="p">,</span> <span class="s2">"PM25"</span><span class="p">,</span> <span class="s2">"PovertyRate"</span><span class="p">]]</span>  
+
+<span class="c1"># Add clean borough name</span>
+<span class="n">boro_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s2">"Manhattan"</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s2">"Bronx"</span><span class="p">,</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="s2">"Brooklyn"</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="s2">"Queens"</span><span class="p">,</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="s2">"Staten Island"</span>
+<span class="p">}</span>
+<span class="n">merged</span><span class="p">[</span><span class="s2">"Borough"</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"Boro"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">boro_names</span><span class="p">)</span>
+
+<span class="c1"># Sort for neatness</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"Boro"</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">merged</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7975,24 +8154,44 @@ Poverty Data Columns:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46365e19">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5e5c68b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Method explained</p>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Method Explained</p>
 <ol>
-<li>Filtered air quality data to Borough-level observations.</li>
-<li>Selected only “Fine Particulate Matter (PM2.5)” measurements.</li>
-<li>Computed the average PM2.5 value for each borough.</li>
-<li>Aggregated microdata to calculate borough-level poverty rates.</li>
-<li>Merged both datasets on borough code.</li>
-<li>Conducted correlation analysis and visualized the relationship using:<ul>
-<li>Scatter plot with OLS regression line</li>
-<li>Bar chart comparing PM2.5 across boroughs</li>
-</ul>
+<li><p>Filtered the air quality dataset to keep only borough-level observations.
+The raw dataset includes measurements at multiple geographic levels (citywide, neighborhood, borough).
+Since the poverty dataset is also aggregated at the borough level, I restricted the analysis to “Geo Type = Borough” to ensure comparability.</p>
 </li>
-<li>Interpreted results and revisited the hypothesis.</li>
+<li><p>Selected only observations related to “Fine Particulate Matter (PM2.5).”
+The air quality dataset reports multiple pollutants (Ozone, Nitrogen Dioxide, PM2.5, etc.).
+For this project, I focused specifically on PM2.5 because it is one of the most widely used indicators of air pollution and has clear health implications.</p>
+</li>
+<li><p>Computed the average PM2.5 value for each borough.
+After filtering, multiple PM2.5 readings still existed per borough across time periods.
+I calculated the mean value for each borough to obtain a single representative indicator of air pollution intensity.</p>
+</li>
+<li><p>Aggregated the poverty microdata into borough-level poverty rates.
+The NYC poverty microdata contains individual/household-level observations.
+I grouped the data by borough code and calculated the average poverty status (NYCgov_Pov_Stat), which results in a borough-level poverty rate.</p>
+</li>
+<li><p>Merged the PM2.5 dataset and the poverty dataset using borough codes.
+Both datasets include a “Boro” numeric identifier from 1 to 5.
+I mapped these codes to borough names for clarity and combined the two datasets into a unified analytic table.</p>
+</li>
+<li><p>Conducted correlation analysis and visualized the relationship.
+•	Calculated the Pearson correlation coefficient between PM2.5 and poverty rate.
+•	Created a scatter plot with an OLS regression line to examine linear trends.
+•	Generated a bar chart comparing PM2.5 levels across boroughs.</p>
+</li>
+</ol>
+<p>These visualizations help explore whether higher poverty rates are associated with higher levels of air pollution.</p>
+<ol start="7">
+<li>Interpreted results and revisited the hypothesis.
+Finally, I examined whether the data supports the initial hypothesis that higher-poverty boroughs experience worse air quality.The correlation turned out to be very weak, suggesting that—based on this dataset—air pollution differences across boroughs are not strongly linked to poverty levels.</li>
 </ol>
 </div>
 </div>
@@ -8002,17 +8201,46 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Scatter Plot</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=29e2102e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=29e2102e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">merged</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"PovertyRate"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"PM25"</span><span class="p">,</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">"Borough"</span><span class="p">,</span>
+    <span class="n">trendline</span><span class="o">=</span><span class="s2">"ols"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Poverty Rate vs PM2.5 Exposure by Borough"</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"PovertyRate"</span><span class="p">:</span> <span class="s2">"Poverty Rate"</span><span class="p">,</span> <span class="s2">"PM25"</span><span class="p">:</span> <span class="s2">"PM2.5 (mcg/m3)"</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"top center"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="545px" scrolling="no" src="iframe_figures/figure_6.html" width="100%"></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -8021,36 +8249,186 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Bar Chart</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=fb62baf1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fb62baf1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">merged</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"Borough"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"PM25"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"PovertyRate"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average PM2.5 Concentration by Borough"</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"PM25"</span><span class="p">:</span> <span class="s2">"PM2.5 (mcg/m3)"</span><span class="p">},</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">"Reds"</span>
+<span class="p">)</span>
+
+<span class="n">fig2</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="545px" scrolling="no" src="iframe_figures/figure_7.html" width="100%"></iframe>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10ba2f61">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b86e86c3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Borough-level PM2.5 Ranking Bar Chart</p>
+<p>This bar chart shows clear between-borough disparities in air pollution. Brooklyn and Manhattan exhibit the highest PM2.5 exposure, while Staten Island has the lowest.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=197bd340">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">merged</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"Borough"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"PM25"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average PM2.5 Level by Borough"</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"PM25"</span><span class="p">:</span> <span class="s2">"PM2.5 (mcg/m3)"</span><span class="p">,</span> <span class="s2">"Borough"</span><span class="p">:</span> <span class="s2">"Borough"</span><span class="p">},</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">"PM25"</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"outside"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="545px" scrolling="no" src="iframe_figures/figure_8.html" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c03ae331">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Dual-axis Chart: Poverty vs PM2.5</p>
+<p>The dual-axis chart helps visualize whether boroughs with higher air pollution also exhibit higher poverty levels. In this dataset, the two patterns do not strongly align.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=58ab13b2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">"Borough"</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">"PM25"</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"PM2.5"</span>
+<span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">"Borough"</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">merged</span><span class="p">[</span><span class="s2">"PovertyRate"</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"Poverty Rate"</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="s2">"y2"</span>
+<span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"PM2.5 and Poverty Rate by Borough"</span><span class="p">,</span>
+    <span class="n">yaxis2</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">overlaying</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">"right"</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="545px" scrolling="no" src="iframe_figures/figure_9.html" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b3145f53">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Correlation</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=604a792d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=604a792d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"PovertyRate"</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"PM25"</span><span class="p">])</span>
+<span class="n">corr</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>np.float64(-0.02505734926494508)</pre>
 </div>
@@ -8062,17 +8440,154 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Correlation-Analysis-Visualization">Correlation Analysis Visualization<a class="anchor-link" href="#Correlation-Analysis-Visualization">¶</a></h3><p>To better illustrate the statistical relationship between poverty and PM2.5 exposure, I generated a correlation heatmap. The darker red color indicates a stronger positive association. This visualization confirms that higher-poverty boroughs tend to have higher PM2.5 concentrations.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=103b79c4">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=103b79c4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[[</span><span class="s2">"PovertyRate"</span><span class="p">,</span> <span class="s2">"PM25"</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
+    <span class="n">corr_matrix</span><span class="p">,</span>
+    <span class="n">text_auto</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">"Reds"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Correlation Heatmap: Poverty Rate vs PM2.5"</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<iframe allowfullscreen="" frameborder="0" height="545px" scrolling="no" src="iframe_figures/figure_11.html" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b12ded9d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Regression Table</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=00519560">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"PovertyRate"</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"PM25"</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>/opt/miniconda3/lib/python3.13/site-packages/statsmodels/stats/stattools.py:74: ValueWarning:
+
+omni_normtest is not valid with less than 8 observations; 5 samples were given.
+
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+<th>Dep. Variable:</th> <td>PM25</td> <th>  R-squared:         </th> <td>   0.001</td>
+</tr>
+<tr>
+<th>Model:</th> <td>OLS</td> <th>  Adj. R-squared:    </th> <td>  -0.332</td>
+</tr>
+<tr>
+<th>Method:</th> <td>Least Squares</td> <th>  F-statistic:       </th> <td>0.001885</td>
+</tr>
+<tr>
+<th>Date:</th> <td>Sat, 29 Nov 2025</td> <th>  Prob (F-statistic):</th> <td> 0.968</td>
+</tr>
+<tr>
+<th>Time:</th> <td>16:37:48</td> <th>  Log-Likelihood:    </th> <td> -5.5412</td>
+</tr>
+<tr>
+<th>No. Observations:</th> <td>     5</td> <th>  AIC:               </th> <td>   15.08</td>
+</tr>
+<tr>
+<th>Df Residuals:</th> <td>     3</td> <th>  BIC:               </th> <td>   14.30</td>
+</tr>
+<tr>
+<th>Df Model:</th> <td>     1</td> <th> </th> <td> </td>
+</tr>
+<tr>
+<th>Covariance Type:</th> <td>nonrobust</td> <th> </th> <td> </td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+<td></td> <th>coef</th> <th>std err</th> <th>t</th> <th>P&gt;|t|</th> <th>[0.025</th> <th>0.975]</th>
+</tr>
+<tr>
+<th>const</th> <td>    9.6544</td> <td>   17.363</td> <td>    0.556</td> <td> 0.617</td> <td>  -45.601</td> <td>   64.910</td>
+</tr>
+<tr>
+<th>PovertyRate</th> <td>   -0.4129</td> <td>    9.511</td> <td>   -0.043</td> <td> 0.968</td> <td>  -30.683</td> <td>   29.857</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+<th>Omnibus:</th> <td>   nan</td> <th>  Durbin-Watson:     </th> <td>   2.061</td>
+</tr>
+<tr>
+<th>Prob(Omnibus):</th> <td>   nan</td> <th>  Jarque-Bera (JB):  </th> <td>   0.611</td>
+</tr>
+<tr>
+<th>Skew:</th> <td> 0.811</td> <th>  Prob(JB):          </th> <td>   0.737</td>
+</tr>
+<tr>
+<th>Kurtosis:</th> <td> 2.449</td> <th>  Cond. No.          </th> <td>    97.4</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</div>
 </div>
 </div>
 </div>
@@ -8081,41 +8596,22 @@ Poverty Data Columns:
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Results &amp; Interpretation
-While prior research suggests that low-income communities often bear higher environmental burdens, our borough-level analysis shows almost no linear correlation between poverty rates and PM2.5 (r ≈ –0.025).
-This is largely due to the geographic aggregation problem: each borough contains substantial internal variation, so averaging at the borough level masks neighborhood-level disparities.</p>
-<p>The near-zero correlation in our analysis does not imply that environmental inequality does not exist.
-Instead, it highlights a common issue in urban data analysis: borough-level aggregation masks neighborhood-level disparities, which requires finer geographic units (such as NTA or census tract) to properly identify environmental injustice patterns.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17ed2e07">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><h3 id="Scatter-Plot">Scatter Plot<a class="anchor-link" href="#Scatter-Plot">¶</a></h3><p>The scatter plot shows a clear upward trend: boroughs with higher poverty rates also tend to have higher PM2.5 concentrations. The OLS trendline confirms a positive slope.</p>
-<h3 id="Correlation">Correlation<a class="anchor-link" href="#Correlation">¶</a></h3><p>The correlation coefficient (printed above) is positive, indicating a statistically meaningful relationship between poverty and pollution.</p>
-<h3 id="Borough-Comparison">Borough Comparison<a class="anchor-link" href="#Borough-Comparison">¶</a></h3><ul>
-<li><strong>Bronx</strong> has the highest poverty rate <em>and</em> the highest PM2.5 levels.</li>
-<li><strong>Manhattan</strong> and <strong>Staten Island</strong> exhibit lower poverty and lower PM2.5 levels.</li>
-<li><strong>Brooklyn</strong> and <strong>Queens</strong> fall in the mid-range.</li>
-</ul>
-<hr/>
-<h2 id="Hypothesis-Revisited">Hypothesis Revisited<a class="anchor-link" href="#Hypothesis-Revisited">¶</a></h2><p><strong>The hypothesis is supported.</strong><br/>
-Lower-income boroughs experience higher PM2.5 levels, consistent with environmental inequality literature.</p>
-<hr/>
-<h2 id="Policy-Implications">Policy Implications<a class="anchor-link" href="#Policy-Implications">¶</a></h2><p>These results underscore the need for targeted environmental interventions in high-poverty boroughs.<br/>
-For example:</p>
-<ul>
-<li>Increasing pollution monitoring in the Bronx</li>
-<li>Expanding clean air programs</li>
-<li>Prioritizing low-income areas for green infrastructure</li>
-<li>Reducing traffic and industrial emissions in vulnerable communities</li>
-</ul>
-<p>This suggests that air pollution in NYC is not only an environmental issue but also a social equity issue.</p>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Results &amp; Interpretation</p>
+<p>Our findings reveal that the borough-level relationship between poverty and PM2.5 exposure in New York City is extremely weak (correlation ≈ –0.025). While existing literature in environmental justice often shows that low-income communities face higher pollution burdens, our analysis does not reproduce that pattern at the borough scale.</p>
+<p>This result should not be interpreted as evidence against environmental inequality. Instead, it illustrates a well-known methodological issue in urban research: geographic aggregation bias. Each NYC borough contains highly diverse neighborhoods—ranging from affluent areas with clean air to disadvantaged areas with significantly higher pollution. When we average these conditions across an entire borough, the internal disparities are smoothed out, producing an artificially weak or misleading correlation.</p>
+<p>Therefore, the near-zero correlation in our analysis does not contradict the broader environmental justice literature. Rather, it highlights that:</p>
+<ol>
+<li><p>Boroughs are too large to capture meaningful exposure variation.
+Neighborhood-level (e.g., census tract or ZIP code) data is required to reveal inequities.</p>
+</li>
+<li><p>Environmental burdens may cluster within specific pockets, especially along highways, industrial corridors, or areas with dense traffic—patterns that borough averages cannot show.</p>
+</li>
+<li><p>Future work should use more granular spatial units and potentially incorporate additional variables (e.g., race, housing conditions, asthma hospitalization rates) to better identify environmental injustice hotspots.</p>
+</li>
+</ol>
+<p>In summary, the weak correlation found here underscores a key empirical challenge: environmental inequality exists, but borough-level averages are too coarse to detect it. More detailed spatial analysis is needed to uncover the true distribution of pollution burdens across NYC communities.</p>
 </div>
 </div>
 </div>
